@@ -70,6 +70,7 @@ docker ps
 ![docker-ps.png](./screenshots/docker-ps.png)
 
 . Container should be running on port 80
+
 . Access Nginx: http://localhost:80/
 
 ![nginx.png](./screenshots/nginx.png)
