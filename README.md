@@ -25,6 +25,7 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/s
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
 sudo apt install terraform -y
+
 terraform -v
 
 ### 1️⃣ Install Docker
@@ -45,30 +46,38 @@ newgrp docker
 1. Initialize Terraform
 
 cd ~/terraform-docker-container
+
 terraform init
+
 ![terraform-init.png](./screenshots/terraform-init.png)
 
 2. Plan Infrastructure
 
 terraform plan
+
 ![terraform-paln.png](./screenshots/terraform-paln.png)
 
 3. Apply Terraform Changes
 
 terraform apply -auto-approve
+
 ![terraform-apply.png](./screenshots/terraform-apply.png)
 
 4. Verify Docker Container
 
 docker ps
+
 ![docker-ps.png](./screenshots/docker-ps.png)
+
 . Container should be running on port 80
 . Access Nginx: http://localhost:80/
+
 ![nginx.png](./screenshots/nginx.png)
 
 7. Destroy Infrastructure
 
 terraform destroy -auto-approve
+
 ![terraform-destroy.png](./screenshots/terraform-destroy.png)
 
 
